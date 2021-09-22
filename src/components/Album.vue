@@ -1,8 +1,8 @@
 <template>
-  <div class="album-box col-2 m-3">
-      <img class="img-fluid" :src="item.poster" :alt="item.title">
-      <h3>{{ item.title }}</h3>
-      <div>
+  <div class="album-box col-2 my-2 mx-3 d-flex flex-column align-items-center py-2">
+      <img class="img-fluid w-75" :src="item.poster" :alt="item.title">
+      <h3 class="text-center p-3 text-uppercase">{{ item.title }}</h3>
+      <div class="d-flex flex-column align-items-center">
           <div>{{ item.author }}</div>
           <div>{{ item.year }}</div>
       </div>
@@ -24,7 +24,11 @@ export default {
         color: #fff;
 
         img {
-            width: 100%;
+            aspect-ratio: 1/1;
+        }
+
+        div {
+            color: $text-color;
         }
     }
 </style>
