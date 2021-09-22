@@ -1,8 +1,8 @@
 <template>
   <div class="container-fluid">
-      <div class="row">
-          <div class="col">
-              <img src="../assets/img/logo.png" alt="logo">
+      <div class="row h-100">
+          <div class="col h-100 d-flex align-items-center">
+              <img class="h-75 ps-3" src="../assets/img/logo.png" alt="logo">
           </div>
       </div>
   </div>
@@ -19,21 +19,6 @@ export default {
 
     .container-fluid {
         height: 70px;
-        background-color: $header-color;
-
-        .row {
-            height: 100%;
-
-            .col {
-                display: flex;
-                align-items: center;
-                height: 100%;
-
-                img {
-                    height: 80%;
-                    padding-left: 20px;
-                }
-            }
-        }
+        background-color: $header-color;        
     }
 </style>

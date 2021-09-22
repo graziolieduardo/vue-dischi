@@ -1,8 +1,12 @@
 <template>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <Album />
+    <div class="wrapper">
+        <div class="container-fluid pt-5 w-75">
+            <div class="row">
+                <Album 
+                v-for="(album, index) in albums" 
+                :key="index"
+                :item="album"
+                />
             </div>
         </div>
     </div>
@@ -26,6 +30,7 @@ export default {
                 .get(this.myApi)
                 .then(res => {
                     this.albums = res.data.response;
+                    console.log(this.albums);
                 })
         }   
     },
@@ -40,4 +45,9 @@ export default {
 
 <style scoped lang="scss">
     @import '../assets/style/vars.scss';
+
+    .wrapper {
+        height: calc(100vh - 70px);
+        background-color: $main-color;
+    }
 </style>
