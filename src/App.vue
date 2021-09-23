@@ -1,13 +1,18 @@
 <template>
   <div id="app">
     <Header
-    @emitGenre="getGenre" 
+    @emitGenre="getGenre"
+    @emitAuthor="getAuthor" 
     :allGenre="genreArray"
+    :allAuthors="authorsArray"
     />
     <main>
       <Albums 
+      @authorsArr="getArrAuthors"
       @genreArr="getArrGenre"
-      :lastValue="selectValue" />
+      :lastValue="selectValue"
+      :lastAuthor="selectAuthor" 
+      />
     </main>
   </div>
 </template>
@@ -25,17 +30,27 @@ export default {
   data() {
     return {
       selectValue: '',
-      genreArray: []
+      selectAuthor: '',
+      genreArray: [],
+      authorsArray: []
     }
   },
   methods: {
+    // metodi per input di generi 
     getGenre(value) {
       this.selectValue = value;
       console.log(this.selectValue);
     },
     getArrGenre(array) {
       this.genreArray = array;
-    }
+    },
+    // metodi per input author 
+    getArrAuthors(array) {
+      this.authorsArray = array;
+    },
+    getAuthor(value) {
+      this.selectAuthor = value
+;    }
   }
 }
 </script>
